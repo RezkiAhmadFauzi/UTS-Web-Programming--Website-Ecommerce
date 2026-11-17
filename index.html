@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Berkah Mart - Toko Kelontong Online</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header id="rezki_header">
+      <nav class="rezki_nav">
+        <a href="#rezki_beranda" class="rezki_logo">🛒 Berkah<span>Mart</span></a>
+        <ul class="rezki_menu" id="rezki_menu">
+          <li><a href="#rezki_beranda">Beranda</a></li>
+          <li><a href="#rezki_produk">Produk</a></li>
+          <li><a href="#rezki_fitur">Fitur</a></li>
+          <li><a href="#rezki_cara">Cara Belanja</a></li>
+          <li><a href="#rezki_testimoni">Testimoni</a></li>
+          <li><a href="#rezki_tentang">Tentang</a></li>
+          <li><a href="#rezki_kontak">Kontak</a></li>
+        </ul>
+        <div class="rezki_actions">
+          <button class="rezki_cartbtn" id="rezki_cartbtn" aria-label="Buka keranjang">
+            🧺 <span class="rezki_hide_m">Keranjang</span> <b id="rezki_cartcount">0</b>
+          </button>
+          <button class="rezki_btn rezki_btn_alt" id="rezki_adminbtn">
+            🔐 <span class="rezki_hide_m">Login&nbsp;</span>Admin
+          </button>
+        </div>
+        <button class="rezki_burger" id="rezki_burger" aria-label="Menu">☰</button>
+      </nav>
+    </header>
+
+    <div id="rezki_shopview">
+        <main>
+            <section id="rezki_beranda" class="rezki_section rezki_hero">
+                <div class="rezki_hero_text">
+                    <h1>Belanja kebutuhan dapur tanpa antre.</h1>
+                    <p>Beras, minyak, telur, sampai sabun cuci. Pilih dari rumah, bayar tunai atau QRIS, struk langsung tersedia.</p>
+                    <div class="rezki_cta">
+                        <a class="rezki_btn" href="#rezki_produk">Mulai Belanja</a>
+                        <a class="rezki_btn rezki_btn_alt" href="#rezki_cara">Lihat Cara Belanja</a>
+                    </div>
+                </div>
+                <div class="rezki_rak" aria-hidden="true">
+                    <span><img src="https://down-id.img.susercontent.com/file/id-11134207-7ras9-m5l0zlt6orb407" alt="Beras"><small>Rp18.000</small></span>
+                    <span><img src="https://down-id.img.susercontent.com/file/id-11134207-822wm-mn6htk8e6gp25a" alt="Telur"><small>Rp29.000</small></span>
+                    <span><img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/95/MTA-60133927/kapal_api_kopi_kapal_api_special_mix_24_gram__10_sachet_full01_51467e9e.jpg" alt="Kopi"><small>Rp14.000</small></span>
+                    <span><img src="https://content-asset.phsar121.com/products/43indo.jpg" alt="Indomie Goreng"><small>Rp3.500</small></span>
+                    <span><img src="https://down-id.img.susercontent.com/file/b624b93bc6f21e8eaa0c5ea46fedcff4" alt="Teh Botol"><small>Rp5.000</small></span>
+                    <span><img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/c47337744c8244228931b28721b78141~tplv-aphluv4xwc-crop-webp:1000:1000.webp?dr=15592&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=607f11de&idc=my&from=2378011839" alt="Sabun Cuci Piring"><small>Rp9.000</small></span>
+                </div>
+            </section>
+
+            <section id="rezki_produk" class="rezki_section">
+                <div class="rezki_title">
+                    <h2>Produk Kami</h2>
+                    <p>Harga dan stok selalu diperbarui oleh admin toko.</p>
+                </div>
+                <div class="rezki_tools">
+                    <input type="search" id="rezki_cari" placeholder="Cari produk, misalnya beras" aria-label="Cari produk">
+                    <select id="rezki_kategori" aria-label="Kategori"></select>
+                </div>
+                <div id="rezki_grid"></div>
+            </section>
+
+            <section id="rezki_fitur" class="rezki_section">
+                <div class="rezki_title">
+                    <h2>Dibuat supaya warung lebih tertib</h2>
+                    <p>Lima fitur yang menjawab masalah pencatatan manual di toko kelontong.</p>
+                </div>
+                <div class="rezki_features">
+                    <article class="rezki_feat">
+                        <i>🧾</i>
+                        <h3>Kasir Digital</h3>
+                        <p>Total harga dan kembalian dihitung otomatis, sehingga kecil kemungkinan salah hitung.</p>
+                    </article>
+                    <article class="rezki_feat">
+                        <i>📊</i>
+                        <h3>Laporan Harian</h3>
+                        <p>Ringkasan transaksi, pendapatan, dan laba bersih tersedia setiap hari dan bisa dicetak.</p>
+                    </article>
+                    <article class="rezki_feat">
+                        <i>📦</i>
+                        <h3>Stok Otomatis</h3>
+                        <p>Stok berkurang sendiri setiap ada penjualan. Barang yang hampir habis diberi tanda.</p>
+                    </article>
+                    <article class="rezki_feat">
+                        <i>🏆</i>
+                        <h3>Produk Terlaris</h3>
+                        <p>Lihat barang paling laku beserta margin keuntungannya sebelum menentukan belanja modal.</p>
+                    </article>
+                    <article class="rezki_feat">
+                        <i>📱</i>
+                        <h3>Struk Digital dan QRIS</h3>
+                        <p>Rincian belanja langsung tampil di layar, dan pembayaran non-tunai bisa lewat QRIS.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="rezki_cara" class="rezki_band">
+                <div class="rezki_section">
+                    <div class="rezki_title">
+                        <h2>Cara belanja</h2>
+                        <p>Empat langkah, tanpa perlu membuat akun.</p>
+                    </div>
+                    <div class="rezki_steps">
+                        <div class="rezki_step">
+                            <h3>Pilih produk</h3>
+                            <p>Cari di daftar produk lalu tekan tombol Keranjang.</p>
+                        </div>
+                        <div class="rezki_step">
+                            <h3>Cek keranjang</h3>
+                            <p>Ubah jumlah barang atau hapus yang tidak jadi dibeli.</p>
+                        </div>
+                        <div class="rezki_step">
+                            <h3>Pilih pembayaran</h3>
+                            <p>Tunai (kembalian dihitung otomatis) atau QRIS.</p>
+                        </div>
+                        <div class="rezki_step">
+                            <h3>Terima struk</h3>
+                            <p>Struk digital muncul dan bisa langsung dicetak.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rezki_testimoni" class="rezki_section">
+                <div class="rezki_title">
+                    <h2>Kata pelanggan</h2>
+                    <p>Contoh testimoni untuk keperluan tampilan.</p>
+                </div>
+                <div class="rezki_quotes">
+                    <blockquote class="rezki_quote">
+                        <p>Belanja bulanan jadi cepat. Stok yang tampil juga akurat, tidak ada barang kosong yang tiba-tiba.</p>
+                        <cite>Bu Sari, ibu rumah tangga</cite>
+                    </blockquote>
+                    <blockquote class="rezki_quote">
+                        <p>Saya suka ada struk digital. Kalau perlu catatan pengeluaran tinggal lihat lagi.</p>
+                        <cite>Pak Dedi, pemilik katering</cite>
+                    </blockquote>
+                    <blockquote class="rezki_quote">
+                        <p>Bayar pakai QRIS praktis, tidak perlu menyiapkan uang pas.</p>
+                        <cite>Teh Rina, mahasiswi</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <section id="rezki_tentang" class="rezki_section rezki_two">
+                <div>
+                    <h2>Toko kelontong yang mulai go digital</h2>
+                    <p>Berkah Mart berawal dari warung keluarga yang mencatat semua penjualan di buku tulis. Sering kali stok sulit dipantau dan laporan harian memakan waktu. Kini pencatatan, stok, dan laporan berjalan otomatis, sementara pelanggan tetap dilayani dengan ramah.</p>
+                </div>
+                <ul class="rezki_info">
+                    <li>🕖 <b>Jam buka</b><br>Setiap hari, 07.00 - 21.00</li>
+                    <li>📍 <b>Alamat</b><br>Jl. Alus No. 10, Tasikmalaya</li>
+                    <li>📞 <b>WhatsApp</b><br>0812-0000-0000</li>
+                </ul>
+            </section>
+
+            <section id="rezki_kontak" class="rezki_section rezki_two">
+                <div>
+                    <h2>Kirim pesan ke pemilik toko</h2>
+                    <p>Ada pertanyaan soal produk, pesanan, atau kerja sama? Tulis di sini, pesan Anda akan diterima admin.</p>
+                </div>
+                <form id="rezki_form" class="rezki_formbox">
+                    <label>Nama<input type="text" name="nama" required maxlength="60" autocomplete="name"></label>
+                    <label>Email<input type="email" name="email" required autocomplete="email"></label>
+                    <label>Pesan<textarea name="pesan" rows="4" required maxlength="500"></textarea></label>
+                    <button type="submit" class="rezki_btn">Kirim Pesan</button>
+                </form>
+            </section>
+        </main>
+
+        <footer id="rezki_footer">
+            <p>© 2026 Berkah Mart. Dibuat oleh Rezki Ahmad Fauzi - Teknik Informatika A.</p>
+            <p><a href="#rezki_beranda">Kembali ke atas</a> | <a href="#rezki_adminview" id="rezki_adminlink">Login Admin</a></p>
+        </footer>
+    </div>
+
+    <div id="rezki_adminview" hidden>
+        <div class="rezki_section">
+            <div id="rezki_login" class="rezki_login_box">
+                <h1>Login Admin</h1>
+                <form id="rezki_login_form" class="rezki_formbox">
+                    <label>Username<input type="text" id="rezki_user" required autocomplete="username"></label>
+                    <label>Password<input type="password" id="rezki_pass" required autocomplete="current-password"></label>
+                    <p id="rezki_err" class="rezki_err" role="alert"></p>
+                    <button type="submit" class="rezki_btn">Masuk</button>
+                    <small>Akun demo: admin / admin123</small>
+                </form>
+            </div>
+
+            <div id="rezki_dash" hidden>
+                <div class="rezki_admin_bar">
+                    <h1>Dashboard Admin</h1>
+                    <div class="rezki_actions rezki_noprint">
+                        <label>Tanggal <input type="date" id="rezki_tgl"></label>
+                        <button class="rezki_btn" id="rezki_print">🖨️ Cetak Laporan</button>
+                        <button class="rezki_btn rezki_btn_alt" id="rezki_reset">Reset Data</button>
+                        <button class="rezki_btn rezki_btn_alt" id="rezki_logout">Keluar</button>
+                    </div>
+                </div>
+                <div class="rezki_stats">
+                    <div class="rezki_stat"><span>Pemasukan</span><b id="rezki_s_pendapatan">Rp0</b></div>
+                    <div class="rezki_stat"><span>Pengeluaran (HPP)</span><b id="rezki_s_pengeluaran">Rp0</b></div>
+                    <div class="rezki_stat"><span>Untung / Rugi</span><b id="rezki_s_laba">Rp0</b></div>
+                    <div class="rezki_stat"><span>Transaksi</span><b id="rezki_s_trx">0</b></div>
+                    <div class="rezki_stat"><span>Item terjual</span><b id="rezki_s_item">0</b></div>
+                </div>
+                <section id="rezki_print_report" class="rezki_print_report" hidden>
+                    <h1>Laporan Keuangan</h1>
+                    <p id="rezki_print_date"></p>
+                    <div class="rezki_stats">
+                        <div class="rezki_stat"><span>Pemasukan</span><b id="rezki_print_pemasukan">Rp0</b></div>
+                        <div class="rezki_stat"><span>Pengeluaran (HPP)</span><b id="rezki_print_pengeluaran">Rp0</b></div>
+                        <div class="rezki_stat"><span>Untung / Rugi</span><b id="rezki_print_laba">Rp0</b></div>
+                    </div>
+                </section>
+                <section class="rezki_panel">
+                    <h2>Laporan Penjualan Harian</h2>
+                    <table>
+                        <thead><tr><th>Jam</th><th>Item</th><th>Metode</th><th>Total</th></tr></thead>
+                        <tbody id="rezki_tbl_trx"></tbody>
+                    </table>
+                </section>
+                <section class="rezki_panel">
+                    <h2>Manajemen Produk</h2>
+                    <p class="rezki_admin_hint">Ubah nama, harga, dan stok produk. Pengeluaran laporan dihitung dari harga modal produk yang terjual.</p>
+                    <form id="rezki_product_form" class="rezki_product_form">
+                        <label>Nama produk<input type="text" name="nama" required maxlength="80"></label>
+                        <label>Kategori<input type="text" name="kategori" required maxlength="40"></label>
+                        <label>Harga jual<input type="number" name="harga" min="1" step="1" required></label>
+                        <label>Harga modal<input type="number" name="modal" min="0" step="1" required></label>
+                        <label>Stok awal<input type="number" name="stok" min="0" step="1" required></label>
+                        <button type="submit" class="rezki_btn">Tambah Produk</button>
+                    </form>
+                    <table>
+                        <thead><tr><th>Nama produk</th><th>Harga jual</th><th>Harga modal</th><th>Stok</th><th>Status</th><th>Foto produk</th></tr></thead>
+                        <tbody id="rezki_tbl_stok"></tbody>
+                    </table>
+                </section>
+                <section class="rezki_panel">
+                    <h2>Produk Terlaris dan Margin</h2>
+                    <table>
+                        <thead><tr><th>Produk</th><th>Terjual</th><th>Laba</th><th>Margin</th></tr></thead>
+                        <tbody id="rezki_tbl_top"></tbody>
+                    </table>
+                </section>
+                <section class="rezki_panel">
+                    <h2>Pesan Masuk</h2>
+                    <ul id="rezki_pesan" class="rezki_pesan"></ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="rezki_overlay"></div>
+    <aside id="rezki_drawer" aria-label="Keranjang belanja">
+        <div class="rezki_drawer_head">
+            <h3>Keranjang Belanja</h3>
+            <button id="rezki_close" aria-label="Tutup keranjang">✕</button>
+        </div>
+        <div id="rezki_cartlist"></div>
+        <div class="rezki_drawer_foot">
+            <div class="rezki_row"><span>Total</span><b id="rezki_total">Rp0</b></div>
+            <label>
+                Metode bayar
+                <select id="rezki_metode"><option value="tunai">Tunai</option><option value="qris">QRIS</option></select>
+            </label>
+            <div id="rezki_tunai">
+                <label>Uang diterima<input type="number" id="rezki_uang" min="0" placeholder="0"></label>
+                <div class="rezki_row"><span>Kembalian</span><b id="rezki_kembali">Rp0</b></div>
+            </div>
+            <div id="rezki_qrbox" hidden>
+                <canvas id="rezki_qr" width="150" height="150"></canvas>
+                <small>Scan QRIS (simulasi)</small>
+            </div>
+            <button class="rezki_btn" id="rezki_checkout">Bayar dan Cetak Struk</button>
+        </div>
+    </aside>
+
+    <div id="rezki_modal" hidden>
+        <div class="rezki_modal_box">
+            <div id="rezki_struk"></div>
+            <div class="rezki_modal_btn">
+                <button class="rezki_btn" id="rezki_cetak">🖨️ Cetak</button>
+                <button class="rezki_btn rezki_btn_alt" id="rezki_tutup">Tutup</button>
+            </div>
+        </div>
+    </div>
+    <div id="rezki_toast" role="status"></div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
